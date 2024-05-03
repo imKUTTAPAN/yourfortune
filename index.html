@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <h1>ABHISHEK'S FORTUNE</h1>
+    <label for="birthday">Enter your birthday:</label><br>
+    <input type="date" id="birthday" name="birthday" class="big-input"><br>
+    <p><p>
+    <button onclick="generatePrediction()" class="big-button">SUBMIT</button>
+
+    <p id="prediction"></p>
+  </div>
+
+  <script>
+    function generatePrediction() {
+      var birthday = document.getElementById('birthday').value;
+      var prediction = generateHumorousPrediction(birthday);
+      document.getElementById('prediction').innerHTML = prediction;
+    }
+
+    function generateHumorousPrediction(birthday) {
+      var predictions = [
+        "You will become a movie director and go bankrupt.",
+        "you'll probably die alone",
+	"you won't grow any taller",
+        "A mysterious benefactor will leave a treasure map in your mailbox that leads to nothing",
+        "Aliens will abduct you and teach you their secrets of the universe.",
+        "You will win the lottery and retire to a private island.",
+        "You will discover that there is no meaning in life",
+        "You will become an internet scammer trying to sell vpn's",
+        "You will become a famous scientist and discover a new element.",
+        "You will go sky diving and the parachute wont open",
+        "You will become a renowned artist and sell your paintings for millions.",
+        "You will become a superhero and save the world from destruction.",
+        "You will become a time traveler and explore the past and future.",
+        "You will become a famous fashion designer and create the next big trend.",
+        "You will become a world explorer and discover new lands.",
+        "You will become a famous musician and sell out arenas.",
+	"you'll be in the plane going to hit the tower",
+        "You will become a renowned architect and design iconic buildings.",
+        "You will become a professional gamer and win eSports tournaments.",
+        "You will become a professional feet pic agent",
+        "You will become a renowned chef and open a Michelin-starred restaurant."
+      ];
+      var prediction = predictions[Math.floor(Math.random() * predictions.length)];
+      return prediction;
+    }
+  </script>
+</body>
+</html>
